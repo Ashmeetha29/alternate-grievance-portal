@@ -1,73 +1,130 @@
-# Welcome to your Lovable project
+# Smart Nagar Seva (Vite + React + TypeScript)
 
-## Project info
+A modern frontend template for civic/municipal service portals built with Vite, React, TypeScript, Tailwind CSS and a component system inspired by shadcn/ui and Radix UI primitives.
 
-**URL**: https://lovable.dev/projects/a521ca3a-4ece-4b52-8467-54066b2a9b06
+This repository provides a starter UI for complaint/report submission, staff dashboards, and modular UI components.
 
-## How can I edit this code?
+--
 
-There are several ways of editing your application.
+## Key Features
 
-**Use Lovable**
+- Clean component-driven UI (Radix primitives + custom UI wrappers)
+- TypeScript-first React app with Vite for fast dev and build
+- Tailwind CSS with utility-first styling and animations
+- Ready-made UI building blocks in `src/components/ui`
+- Pages for public index, login, and a staff dashboard
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/a521ca3a-4ece-4b52-8467-54066b2a9b06) and start prompting.
+## Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- Framework: React 18 (TypeScript)
+- Build: Vite
+- Styling: Tailwind CSS
+- UI primitives: Radix UI packages, shadcn-style components
+- State & Data: `react-query` available in dependencies
+- Forms: `react-hook-form` + `zod` for validation
 
-**Use your preferred IDE**
+## Quick Start
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Prerequisites:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js (recommended LTS)
+- A package manager (npm, pnpm, or yarn)
 
-Follow these steps:
+Install dependencies:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```bash
+npm install
+# or
+pnpm install
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Run the dev server:
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open the app at http://localhost:5173 (Vite default).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Build for production:
 
-**Use GitHub Codespaces**
+```bash
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Preview a production build:
 
-## What technologies are used for this project?
+```bash
+npm run preview
+```
 
-This project is built with:
+Lint the code:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```bash
+npm run lint
+```
 
-## How can I deploy this project?
+## Project Structure
 
-Simply open [Lovable](https://lovable.dev/projects/a521ca3a-4ece-4b52-8467-54066b2a9b06) and click on Share -> Publish.
+Top-level files and folders of interest:
 
-## Can I connect a custom domain to my Lovable project?
+- `src/` — application source code
+  - `App.tsx` — main app shell and routes
+  - `main.tsx` — entrypoint that mounts the React app
+  - `index.css` / `App.css` — global styles (Tailwind entry)
+  - `components/` — domain components and a `ui/` subfolder with atomic UI building blocks
+  - `pages/` — page-level route components: `Index`, `Login`, `NotFound`
+  - `contexts/` — `LanguageContext` for localization context
+  - `hooks/` — custom hooks like `use-mobile` and `use-toast`
+  - `lib/` — small utilities
 
-Yes, you can!
+The `src/components/ui` folder contains many small wrapper components (accordion, dialog, input, button, toast, etc.) that centralize styling and behavior.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Components & Pages
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- `ComplaintForm.tsx` — sample form for submitting complaints (uses `react-hook-form` patterns)
+- `Header.tsx`, `LocationSelector.tsx`, `DepartmentCard.tsx` — common UI building blocks
+- `StaffDashboard.tsx` — sample/stub dashboard for staff-facing view
+
+If you extend the app, add new reusable pieces into `src/components/ui` so other pages can reuse them.
+
+## Configuration
+
+- Tailwind config: `tailwind.config.ts`
+- Vite config: `vite.config.ts`
+- TypeScript configs: `tsconfig.json`, `tsconfig.app.json`
+
+## Recommendations & Next Steps
+
+- Add routing and protected routes using `react-router-dom` (already included as dependency).
+- Integrate API calls using `@tanstack/react-query` and a backend endpoint.
+- Add i18n support in `LanguageContext` for multi-language capability.
+- Wire up authentication flows in `pages/Login.tsx` and protect staff routes.
+
+## Contributing
+
+Contributions are welcome. Suggested workflow:
+
+1. Fork and create a feature branch
+2. Run and test locally
+3. Open a PR with a description of changes
+
+Please follow existing code style and TypeScript types.
+
+## License
+
+This project currently includes a `LICENSE` file in the repository root — refer to that for license details.
+
+## Credits
+
+- Built with Vite, React, Tailwind CSS, Radix UI and various utility libraries.
+
+--
+
+If you'd like, I can also:
+
+- Add a short development checklist to this README
+- Generate a minimal `CONTRIBUTING.md` or `DEVELOPMENT.md`
+- Add example env and API mocking instructions
+
+Tell me which of these you'd like next.
